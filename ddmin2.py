@@ -14,8 +14,27 @@ def ddmin2(test_case, n=2):
         str: A minimal test case that still causes test to fail
     """
     
+    print("Test case: " + test_case + ", n = " + str(n))
+    
+    deltas = compute_deltas(test_case, n)
+    # if any delta can trigger the error (i.e. test(delta) is true)
+    # reduce to subset
     # TODO
-    pass    
+    
+    complements = compute_complements(deltas)
+    # Otherwise
+    # if any complement can trigger the error (i.e. test(complement) is true)
+    # reduce to complement
+    # TODO
+    
+    # Otherwise
+    # if we can increase the ganularity, do so
+    # TODO
+    
+    # If none of the previous options applies
+    # we have found the minimal test case
+    print("Done!")
+    return test_case
 
 
 def compute_deltas(test_case, n):
